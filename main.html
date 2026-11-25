@@ -1,16 +1,17 @@
-<!DOCTYPE html>
+function mincost(arr) {
+    let cost = 0;
 
-<html>
+    while (arr.length > 1) {
+        arr.sort((a, b) => a - b);
 
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+        let first = arr.shift();
+        let second = arr.shift();
 
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+        let sum = first + second;
+        cost += sum;
 
-</body>
+        arr.push(sum);
+    }
 
-</html>
+    return cost;
+}
